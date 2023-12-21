@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Message from './Message';
-import SendMessage from './SendMessage';
-import { db } from '../firebase';
-import { query, collection, orderBy, onSnapshot } from 'firebase/firestore';
+import React, { useState, useEffect, useRef } from "react";
+import Message from "./Message";
+import SendMessage from "./SendMessage";
+import { db } from "../firebase";
+import { query, collection, orderBy, onSnapshot } from "firebase/firestore";
 
 const style = {
-  main: `flex flex-col p-[10px] max-h-[85vh] overflow-y-auto`,
+  main: `flex flex-col p-[10px] max-h-[87vh] overflow-y-auto`,
 };
 
 const Chat = () => {
@@ -13,7 +13,7 @@ const Chat = () => {
   const scroll = useRef();
 
   useEffect(() => {
-    const q = query(collection(db, 'messages'), orderBy('timestamp'));
+    const q = query(collection(db, "messages"), orderBy("timestamp"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let messages = [];
       querySnapshot.forEach((doc) => {

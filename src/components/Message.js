@@ -3,7 +3,7 @@ import React from "react";
 import { auth } from "../firebase";
 
 const style = {
-  messageContainer: `flex items-center justify-between m-4 py-2 px-3 max-h-[85vh]`,
+  messageContainer: `flex items-center justify-between py-2 px-3 max-h-[87vh]`,
   messageSent: `bg-[#395dff] text-white float-right rounded-full p-4`,
   messageReceived: `bg-[#e5e5ea] text-black float-left rounded-full p-4`,
   nameContainerSent: `text-gray-600 text-xs px-3 py-2 float-left`,
