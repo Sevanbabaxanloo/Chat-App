@@ -1,3 +1,39 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+.bg-gradient-circle {
+  position: relative;
+  width: 322px;
+  height: 322px;
+}
+
+.bg-gradient-circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: blur(100px);
+  background: rgb(42, 82, 45);
+  background: linear-gradient(
+    160deg,
+    rgba(42, 82, 45, 1) 0%,
+    rgba(42, 82, 45, 1) 50%,
+    
+  );
+  border-radius: 50%;
+}
+
+.bg-gradient {
+  background: rgb(42, 82, 45);
+  background: linear-gradient(
+    160deg,
+    rgba(42, 82, 45, 1) 0%,
+    rgba(42, 82, 45, 1) 50%,
+   
+  );
+  position: relative;
+}

@@ -1,14 +1,13 @@
-// Message.js
 import React from "react";
 import { auth } from "../firebase";
 
 const style = {
-  messageContainer: `flex items-center justify-between py-2 px-3 max-h-[87vh]`,
-  messageSent: `bg-[#395dff] text-white float-right rounded-full p-4`,
-  messageReceived: `bg-[#e5e5ea] text-black float-left rounded-full p-4`,
-  nameContainerSent: `text-gray-600 text-xs px-3 py-2 float-left`,
-  nameContainerReceived: `text-gray-600 text-xs px-3 py-2 float-right`,
-  form: `p-2`,
+  messageContainer: `flex items-center justify-between max-h-[87vh] px-[20px]`,
+  messageSent: `text-white float-right flex flex-col gap-1`,
+  messageReceived: `text-white float-right`,
+  nameContainerSent: `bg-[#6E6E6E] text-gray-300 text-xs rounded-[10px] py-[12px] px-[18px] float-right w-content flex items-start flex-col`,
+  nameContainerReceived: `bg-[#019A5A] text-gray-300 text-xs rounded-[10px] py-[12px] px-[18px] float-left w-content flex items-start flex-col`,
+  name: `text-white text-[12px] font-[700]`,
 };
 
 const Message = ({ message }) => {
@@ -24,12 +23,12 @@ const Message = ({ message }) => {
 
   return (
     <div className={`${style.messageContainer}`}>
-      <div className={nameContainerClass}>
-        <p>{message.name}</p>
-        <small> {formattedTime}</small>
-      </div>
-      <div className={style.form}>
-        <p className={`${messageClass}`}>{message.text}</p>
+      <div className="w-full">
+        <div className={nameContainerClass}>
+          <p className={style.name}>{message.name}</p>
+          <p className={`${messageClass}`}>{message.text}</p>
+          <small>{formattedTime}</small>
+        </div>
       </div>
     </div>
   );

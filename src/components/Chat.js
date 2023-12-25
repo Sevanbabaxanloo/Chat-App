@@ -5,7 +5,7 @@ import { db } from "../firebase";
 import { query, collection, orderBy, onSnapshot } from "firebase/firestore";
 
 const style = {
-  main: `flex flex-col p-[10px] max-h-[87vh] overflow-y-auto`,
+  main: `flex flex-col gap-2 mt-[40px] mx-[80px] max-h-[60vh] overflow-y-auto scrollbar scrollbar-thumb-[#019A5A] scrollbar-track-[#6E6E6E] scrollbar-thin max-md:my-[20px] max-md:mx-[20px]`,
 };
 
 const Chat = () => {
@@ -24,17 +24,19 @@ const Chat = () => {
     return () => unsubscribe();
   }, []);
 
+  useEffect(() => {
+    scroll.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   return (
     <>
       <main className={style.main}>
-        {messages &&
-          messages.map((message) => (
-            <Message key={message.id} message={message} />
-          ))}
+        {messages.map((message) => (
+          <Message key={message.id} message={message} />
+        ))}
+        <span ref={scroll}></span>
       </main>
-      {/* Send Message Compoenent */}
       <SendMessage scroll={scroll} />
-      <span ref={scroll}></span>
     </>
   );
 };
