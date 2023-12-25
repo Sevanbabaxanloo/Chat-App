@@ -7,10 +7,6 @@ const style = {
 };
 
 const LogOut = () => {
-  const signOut = () => {
-    signOut(auth);
-  };
-
   return (
     <button onClick={() => auth.signOut()} className={style.button}>
       <FaPowerOff />
