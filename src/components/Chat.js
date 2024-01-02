@@ -5,7 +5,7 @@ import { db } from "../firebase";
 import { query, collection, orderBy, onSnapshot } from "firebase/firestore";
 
 const style = {
-  main: `flex flex-col gap-2 mt-[40px] mx-[80px] max-h-[60vh] overflow-y-auto scrollbar scrollbar-thumb-[#019A5A] scrollbar-track-[#6E6E6E] scrollbar-thin max-md:my-[20px] max-md:mx-[20px]`,
+  main: `flex flex-col gap-2 mt-[40px] mx-[80px] max-h-[60vh] overflow-y-auto scrollbar scrollbar-thumb-[#019A5A] scrollbar-track-[#6E6E6E] scrollbar-thin max-md:my-[20px] max-md:mx-[20px] max-sm:my-[10px] max-sm:mx-[10px]`,
 };
 
 const Chat = () => {
