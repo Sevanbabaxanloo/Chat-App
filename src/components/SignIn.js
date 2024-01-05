@@ -15,8 +15,11 @@ const googleSignIn = () => {
 
 const SignIn = () => {
   return (
-    <div className={style.wrapper}>
-      <GoogleButton onClick={googleSignIn} />
+    <div className={`${style.wrapper} google-button-container`}>
+      <GoogleButton
+        className="google-button google-span google-svg"
+        onClick={googleSignIn}
+      />
     </div>
   );
 };

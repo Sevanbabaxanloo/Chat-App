@@ -3,12 +3,13 @@ import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { CustomIcon } from "./CustomIcon";
 
+
 const style = {
-  form: `h-14 w-[50vw] flex text-xl rounded-[16px] border-[1px] border-white border-opacity-30 items-center space-x-2 px-4 max-sm:w-[70vw] hover:border-opacity-100 hover:border-[#019A5AB2]`,
-  input: `w-full text-xl p-3 bg-transparent text-white outline-none border-none`,
-  button: `w-[40px] h-[40px] bg-[#019A5A] flex items-center justify-center rounded-[10px] max-md:w-[30px] max-md:h-[30px] btn`,
-  container: `w-full flex justify-center items-center my-[20px] max-md:my-[10px]`,
-  sendContainer: `w-[52vw] h-[56px] flex items-center justify-center max-sm:w-[70vw]`,
+  form: `h-14 w-[50vw] flex text-xl rounded-[16px] border-[1px] border-white border-opacity-30 items-center space-x-2 py-[6px] pl-[16px] pr-[6px] max-md:w-[70vw] max-sm:w-[70vw] hover:border-opacity-100 hover:border-[#019A5AB2]`,
+  input: `w-full text-xl py-3 bg-transparent text-white outline-none border-none max-md:placeholder:text-[16px]`,
+  button: `w-[40px] h-[40px] bg-[#019A5A] flex items-center justify-center rounded-[10px] btn`,
+  container: `w-full flex justify-center mt-2 items-center mb-[20px] max-md:mb-[10px]`,
+  sendContainer: `w-[52vw] h-[56px] flex flex-col items-center justify-center  max-md:w-[70vw] max-sm:w-[70vw]`,
 };
 
 const SendMessage = ({ scroll }) => {
